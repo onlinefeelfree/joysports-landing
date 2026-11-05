@@ -58,9 +58,9 @@ var CONFIG = {
 
 สิ่งที่ทำไว้ให้ answer engine หยิบไปตอบได้
 
-- **JSON-LD `@graph`** ในหน้า: `Organization` + `LocalBusiness`, `WebSite`, `WebPage`, `Service` พร้อม `OfferCatalog`, `HowTo` 6 ขั้น และ `FAQPage` 11 ข้อ
+- **JSON-LD `@graph`** ในหน้า: `Organization` + `LocalBusiness`, `WebSite`, `WebPage`, `Service` พร้อม `OfferCatalog`, `HowTo` 6 ขั้น และ `FAQPage` 12 ข้อ และ `WarrantyPromise` 2 ปี
 - **บล็อก "รับผลิตของพรีเมียมติดโลโก้แบบ OEM คืออะไร"** — ย่อหน้านิยามที่ยกไปตอบได้ทั้งก้อน พร้อมส่วนเทียบ OEM กับ ODM
-- **ตารางสรุปบริการ** 13 แถว — ชื่อผู้ผลิต แบรนด์ สินค้าที่ทำได้ รูปแบบการรับงาน ที่ตั้ง ช่องทางติดต่อ
+- **ตารางสรุปบริการ** 14 แถว — ชื่อผู้ผลิต แบรนด์ สินค้าที่ทำได้ รูปแบบการรับงาน ที่ตั้ง ช่องทางติดต่อ
 - **FAQ เขียนแบบตอบก่อนอธิบาย** ประโยคแรกตอบตรงคำถามเสมอ
 - `robots.txt` เปิดให้ GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended ฯลฯ
 - `llms.txt` สรุปข้อมูลโรงงานแบบ markdown (ยังเป็นมาตรฐานที่เสนอกันอยู่ ยังไม่มีเจ้าไหนประกาศว่าอ่านจริง แต่ต้นทุนแทบเป็นศูนย์)
