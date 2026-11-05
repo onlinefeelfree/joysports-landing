@@ -226,7 +226,20 @@ td{color:var(--ink-2)}
 }
 
 /* ---------- แถบตัวเลข ---------- */
-.stats{display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.stats{display:grid; gap:22px 26px; grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:860px){ .stats{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:520px){ .stats{grid-template-columns:1fr} }
+
+/* กล่องงบเริ่มต้นใน hero — ตัวเลขเป็นตัวดึง เงื่อนไข "บางรุ่น" ต้องอยู่ติดกันเสมอ */
+.entry{
+  margin-top:24px; background:#FFF8DC; border:1px solid #F0D982; border-left:5px solid var(--gold);
+  border-radius:0 var(--r-sm) var(--r-sm) 0; padding:16px 20px;
+}
+.entry-nums{display:flex; gap:12px 30px; flex-wrap:wrap; align-items:baseline}
+.entry-nums span{font-family:var(--display); font-size:15px; color:var(--ink); display:flex; align-items:baseline; gap:7px}
+.entry-nums b{font-size:clamp(26px,3vw,32px); font-weight:700; line-height:1; color:var(--navy-800); letter-spacing:-.02em}
+.entry-nums small{font-size:12.5px; color:var(--muted); letter-spacing:.07em; margin-left:2px}
+.entry p{margin-top:11px; font-size:14.8px; color:var(--ink-2); line-height:1.66}
 .stats>*{min-width:0}
 .stat b{
   display:block; font-family:var(--display); font-weight:700; font-size:clamp(36px,4.6vw,54px);
@@ -391,6 +404,13 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
           <li><b>ปรับได้ทั้งทรง สี และวัสดุ</b> — คุมสีตัวกระเป๋า หูหิ้ว และซิปให้ตรง CI องค์กร</li>
           <li><b>รับประกันสินค้า 2 ปี</b> — ของแจกที่มีการรับประกันรองรับ ไม่ใช่แจกแล้วจบกันตรงนั้น</li>
         </ul>
+        <div class="entry">
+          <div class="entry-nums">
+            <span><b>5,000</b> บาท <small>งบเริ่มต้น</small></span>
+            <span><b>50</b> ใบ <small>สั่งขั้นต่ำ</small></span>
+          </div>
+          <p>เป็นเงื่อนไขของ<b>บางรุ่น</b>เท่านั้น ไม่ใช่ทุกทรง — บอกทรงที่สนใจกับจำนวนที่คิดไว้มา แล้วเราจะตอบขั้นต่ำและงบจริงของรุ่นนั้นให้</p>
+        </div>
         <div class="hero-cta">
           <a class="btn btn-primary js-lead" data-ch="hero_phone" href="tel:0616363261">โทรคุยกับโรงงาน 061-636-3261</a>
           <a class="btn btn-ghost" href="#about">ดูข้อมูลบริการทั้งหมด</a>
@@ -411,6 +431,7 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
       <li>แบรนด์ FEELFREE ของโรงงาน</li>
       <li>ส่งออก 60 ประเทศทั่วโลก</li>
       <li>รับประกันสินค้า 2 ปี</li>
+      <li>งบเริ่มต้น 5,000 บาท บางรุ่น</li>
       <li>ทีมออกแบบในโรงงาน</li>
       <li>มีวัสดุเกรด Food Grade</li>
       <li>รับงานในนามตัวแทน</li>
@@ -445,7 +466,8 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
           <tr><td>รูปแบบการรับงาน</td><td>OEM ผลิตตามแบบของลูกค้า · ODM ให้โรงงานออกแบบให้ · รับผลิตในนามตัวแทนและนายหน้า</td></tr>
           <tr><td>งานตกแต่งโลโก้</td><td>สกรีนโลโก้ พิมพ์ลายเต็มใบ ป้ายทอและงานปัก กำหนดสีตัวกระเป๋า หูหิ้ว และซิปให้ตรง CI องค์กร</td></tr>
           <tr><td>วัสดุพิเศษ</td><td>มีวัสดุเกรด Food Grade สำหรับงานที่ต้องสัมผัสอาหาร ต้องระบุตั้งแต่ตอนเลือกวัสดุ</td></tr>
-          <tr><td>จำนวนสั่งผลิตขั้นต่ำ</td><td>ขึ้นกับทรงและงานสกรีนที่เลือก ทรงที่มีแพตเทิร์นอยู่แล้วต่ำกว่างานที่ต้องขึ้นแบบใหม่ <span class="ask">แจ้งทรงและจำนวนเพื่อรับตัวเลขจริง</span></td></tr>
+          <tr><td>จำนวนสั่งผลิตขั้นต่ำ</td><td>เริ่มต้น 50 ใบ สำหรับบางรุ่น ส่วนรุ่นอื่นขึ้นกับทรงและงานสกรีน ทรงที่มีแพตเทิร์นอยู่แล้วต่ำกว่างานที่ต้องขึ้นแบบใหม่ <span class="ask">แจ้งทรงที่สนใจเพื่อรับขั้นต่ำของรุ่นนั้น</span></td></tr>
+          <tr><td>งบเริ่มต้นต่อออเดอร์</td><td>เริ่มต้น 5,000 บาท สำหรับบางรุ่น <span class="ask">ไม่ใช่ทุกทรง ถามรุ่นที่สนใจได้</span></td></tr>
           <tr><td>ระยะเวลาผลิต</td><td>ขึ้นกับว่าต้องขึ้นแบบใหม่หรือใช้แพตเทิร์นเดิม จำนวนที่สั่ง และคิวผลิตช่วงนั้น <span class="ask">แจ้งวันที่ต้องใช้เพื่อเช็กคิว</span></td></tr>
           <tr><td>ที่ตั้งโรงงาน</td><td>72 ซอยบางปลา 2 ตำบลบางปลา อำเภอบางพลี จังหวัดสมุทรปราการ 10540</td></tr>
           <tr><td>พื้นที่ให้บริการ</td><td>ทั่วประเทศไทย และรับผลิตเพื่อส่งออก</td></tr>
@@ -553,6 +575,8 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
 <section class="sec" style="background:var(--navy-900); color:#fff; padding-block:clamp(44px,5.5vw,72px)">
   <div class="wrap">
     <div class="stats">
+      <div class="stat"><b>5,000</b><span class="u">บาท · งบเริ่มต้น</span><p>เริ่มงานได้ด้วยงบหลักพัน เฉพาะบางรุ่นที่เข้าเงื่อนไข ไม่ใช่ทุกทรง ถามรุ่นที่สนใจได้เลย</p></div>
+      <div class="stat"><b>50</b><span class="u">ใบ · สั่งขั้นต่ำ</span><p>เหมาะกับงานล็อตเล็กหรืออยากลองก่อนสั่งจริง เป็นขั้นต่ำของบางรุ่นเช่นกัน</p></div>
       <div class="stat"><b>2543</b><span class="u">ปีที่เริ่มผลิต</span><p>ผลิตสินค้ากันน้ำสำหรับกิจกรรมกลางแจ้งมาตั้งแต่ปี 2543</p></div>
       <div class="stat"><b>60</b><span class="u">ประเทศทั่วโลก</span><p>แบรนด์ FEELFREE ของโรงงานขายอยู่ในตลาดต่างประเทศจริง ไม่ใช่แค่ผลิตส่งออก</p></div>
       <div class="stat"><b>2 ปี</b><span class="u">รับประกันสินค้า</span><p>ของแจกที่มีการรับประกันรองรับ ฝ่ายจัดซื้อตอบผู้บริหารได้ว่าไม่ใช่ของใช้ครั้งเดียวทิ้ง</p></div>
@@ -690,11 +714,11 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
     <div class="faq">
       <details open>
         <summary>สั่งขั้นต่ำเท่าไร</summary>
-        <div class="ans">ขั้นต่ำไม่เท่ากันทุกแบบ ขึ้นกับทรง วัสดุ และงานสกรีนที่เลือก งานทรงมาตรฐานที่เรามีแพตเทิร์นอยู่แล้วจะต่ำกว่างานที่ต้องขึ้นแบบใหม่ บอกทรงกับจำนวนที่คิดไว้มา ทีมจะตอบขั้นต่ำที่ทำได้จริงของแบบนั้นให้</div>
+        <div class="ans">เริ่มต้นที่ <b>50 ใบ</b> สำหรับบางรุ่น ไม่ใช่ทุกทรงที่ทำขั้นต่ำเท่านี้ได้ เพราะขั้นต่ำขึ้นกับทรง วัสดุ และงานสกรีนที่เลือก ทรงมาตรฐานที่เรามีแพตเทิร์นอยู่แล้วจะต่ำกว่างานที่ต้องขึ้นแบบใหม่ บอกทรงที่สนใจกับจำนวนที่คิดไว้มา ทีมจะตอบขั้นต่ำที่ทำได้จริงของรุ่นนั้นให้</div>
       </details>
       <details>
         <summary>มีงบต่อชิ้นอยู่แล้ว ทำอะไรได้บ้างในงบนั้น</summary>
-        <div class="ans">บอกงบต่อชิ้นกับจำนวนมาได้เลย เราจะบอกกลับว่าในกรอบนั้นทำทรงไหน วัสดุไหน และสกรีนกี่สีได้ ถ้างบยังไม่พอกับทรงที่อยากได้ เราจะบอกว่าต้องลดอะไรหรือเพิ่มจำนวนเท่าไรถึงจะเข้ากรอบ</div>
+        <div class="ans">งบเริ่มต้นอยู่ที่ <b>5,000 บาท</b> ต่อออเดอร์ สำหรับบางรุ่น ถ้ามีงบในใจอยู่แล้ว บอกงบกับจำนวนมาได้เลย เราจะบอกกลับว่าในกรอบนั้นทำทรงไหน วัสดุไหน และสกรีนกี่สีได้ ถ้างบยังไม่พอกับทรงที่อยากได้ เราจะบอกว่าต้องลดอะไรหรือเพิ่มจำนวนเท่าไรถึงจะเข้ากรอบ</div>
       </details>
       <details>
         <summary>OEM กับ ODM ต่างกันอย่างไร</summary>
@@ -872,6 +896,19 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
       "provider": { "@id": "https://joysports-landing-eta.vercel.app/#org" },
       "offers": {
         "@type": "Offer",
+        "priceCurrency": "THB",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "THB",
+          "minPrice": 5000,
+          "description": "งบเริ่มต้นต่อออเดอร์ สำหรับบางรุ่นเท่านั้น ไม่ใช่ทุกทรง"
+        },
+        "eligibleQuantity": {
+          "@type": "QuantitativeValue",
+          "minValue": 50,
+          "unitText": "ใบ",
+          "description": "จำนวนสั่งผลิตขั้นต่ำของบางรุ่น รุ่นอื่นขึ้นกับทรงและงานสกรีน"
+        },
         "warranty": {
           "@type": "WarrantyPromise",
           "durationOfWarranty": { "@type": "QuantitativeValue", "value": 2, "unitCode": "ANN" }
@@ -913,8 +950,8 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
       "@type": "FAQPage",
       "@id": "https://joysports-landing-eta.vercel.app/#faq",
       "mainEntity": [
-        { "@type": "Question", "name": "สั่งขั้นต่ำเท่าไร", "acceptedAnswer": { "@type": "Answer", "text": "ขั้นต่ำไม่เท่ากันทุกแบบ ขึ้นกับทรง วัสดุ และงานสกรีนที่เลือก งานทรงมาตรฐานที่มีแพตเทิร์นอยู่แล้วจะต่ำกว่างานที่ต้องขึ้นแบบใหม่ แจ้งทรงกับจำนวนที่คิดไว้เพื่อรับขั้นต่ำที่ทำได้จริงของแบบนั้น" } },
-        { "@type": "Question", "name": "มีงบต่อชิ้นอยู่แล้ว ทำอะไรได้บ้างในงบนั้น", "acceptedAnswer": { "@type": "Answer", "text": "แจ้งงบต่อชิ้นกับจำนวนมาได้เลย ทีมจะตอบกลับว่าในกรอบนั้นทำทรงไหน วัสดุไหน และสกรีนกี่สีได้ ถ้างบยังไม่พอกับทรงที่ต้องการ จะแจ้งว่าต้องลดอะไรหรือเพิ่มจำนวนเท่าไรจึงจะเข้ากรอบ" } },
+        { "@type": "Question", "name": "สั่งขั้นต่ำเท่าไร", "acceptedAnswer": { "@type": "Answer", "text": "เริ่มต้นที่ 50 ใบ สำหรับบางรุ่น ไม่ใช่ทุกทรงที่ทำขั้นต่ำเท่านี้ได้ เพราะขั้นต่ำขึ้นกับทรง วัสดุ และงานสกรีนที่เลือก ทรงมาตรฐานที่มีแพตเทิร์นอยู่แล้วจะต่ำกว่างานที่ต้องขึ้นแบบใหม่ แจ้งทรงที่สนใจกับจำนวนเพื่อรับขั้นต่ำที่ทำได้จริงของรุ่นนั้น" } },
+        { "@type": "Question", "name": "งบเริ่มต้นเท่าไร ถึงสั่งผลิตได้", "acceptedAnswer": { "@type": "Answer", "text": "งบเริ่มต้นอยู่ที่ 5,000 บาทต่อออเดอร์ สำหรับบางรุ่น ไม่ใช่ทุกทรง ถ้ามีงบในใจอยู่แล้ว แจ้งงบกับจำนวนมาได้เลย ทีมจะตอบกลับว่าในกรอบนั้นทำทรงไหน วัสดุไหน และสกรีนกี่สีได้ ถ้างบยังไม่พอกับทรงที่ต้องการ จะแจ้งว่าต้องลดอะไรหรือเพิ่มจำนวนเท่าไรจึงจะเข้ากรอบ" } },
         { "@type": "Question", "name": "OEM กับ ODM ต่างกันอย่างไร", "acceptedAnswer": { "@type": "Answer", "text": "OEM คือลูกค้ามีแบบของตัวเองอยู่แล้วและโรงงานผลิตตามแบบนั้น ส่วน ODM คือโรงงานเป็นผู้ออกแบบให้ตั้งแต่ต้นจากโจทย์ที่ลูกค้าให้มา Joy Sports รับทั้งสองแบบ เพราะทีมออกแบบอยู่ในโรงงานเดียวกับไลน์ผลิต" } },
         { "@type": "Question", "name": "มีรับประกันสินค้าไหม", "acceptedAnswer": { "@type": "Answer", "text": "มี รับประกันสินค้า 2 ปี เป็นเงื่อนไขเดียวกับที่ใช้กับสินค้าแบรนด์ FEELFREE ของโรงงานเองที่ขายอยู่ใน 60 ประเทศ รายละเอียดขอบเขตการรับประกันแจ้งไว้ในใบเสนอราคา" } },
         { "@type": "Question", "name": "ขอใบเสนอราคาแบบละเอียดสำหรับเปรียบเทียบราคา 3 เจ้าได้ไหม", "acceptedAnswer": { "@type": "Answer", "text": "ได้ แจ้งรูปแบบที่ฝ่ายจัดซื้อต้องการ เช่น แยกราคาต่อหน่วย ค่าสกรีน ค่าทำตัวอย่าง และค่าขนส่งเป็นบรรทัด พร้อมระบุกำหนดส่งที่ยืนยันได้ไว้ในใบเสนอราคา" } },
