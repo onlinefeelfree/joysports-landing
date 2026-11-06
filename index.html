@@ -163,14 +163,21 @@ header .btn{flex:none}
 .hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:28px}
 
 .hero-fig{position:relative}
-.hero-fig img{width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:var(--r); box-shadow:var(--shadow-lg)}
+.hero-fig .hero-main{width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:var(--r); box-shadow:var(--shadow-lg)}
+/* ภาพดีเทลซ้อนมุม ให้ hero ดูเป็นงานจัดหน้า ไม่ใช่รูปสินค้าใบเดียว */
+.hero-fig .hero-inset{
+  position:absolute; left:14px; bottom:14px; width:38%; max-width:168px;
+  aspect-ratio:1/1; object-fit:cover; border:5px solid #FFFFFF; border-radius:12px;
+  box-shadow:var(--shadow-lg);
+}
 @media (min-width:901px){
   .hero-grid{align-items:stretch}
   .hero-fig{display:flex; flex-direction:column}
-  .hero-fig img{flex:1; aspect-ratio:auto; min-height:430px; object-position:50% 45%}
+  .hero-fig .hero-main{flex:1; aspect-ratio:auto; min-height:460px; object-position:50% 34%}
+  .hero-fig .hero-inset{left:-20px; bottom:-20px; width:42%; max-width:196px}
 }
 .hero-tag{
-  position:absolute; left:16px; bottom:16px; background:rgba(13,20,33,.86); color:#FFFFFF;
+  position:absolute; right:16px; top:16px; background:rgba(13,20,33,.86); color:#FFFFFF;
   font-family:var(--display); font-size:12.5px; font-weight:500; letter-spacing:.04em;
   padding:8px 14px; border-radius:99px; backdrop-filter:blur(6px);
 }
@@ -269,6 +276,12 @@ td{color:var(--ink-2)}
   letter-spacing:.1em; background:var(--gold); border-radius:var(--r-sm);
   padding:7px 0; text-align:center;
 }
+.steps .who{
+  display:inline-block; font-family:var(--display); font-size:11.5px; font-weight:600;
+  letter-spacing:.08em; padding:3px 10px; border-radius:99px; margin-bottom:8px;
+}
+.steps .who.you{background:#FFF4D6; color:#7A5B00}
+.steps .who.us{background:var(--bg-3); color:var(--navy-700)}
 .steps h3{margin-bottom:6px}
 .steps p{color:var(--muted); font-size:15.3px}
 
@@ -425,8 +438,9 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
         </div>
       </div>
       <figure class="hero-fig" style="margin:0">
-        <img src="images/brand-drybag.jpg" width="1000" height="750" alt="ถุงกันน้ำม้วนปากสีส้มและสีเขียวสกรีนโลโก้องค์กร ผลิตโดย Joy Sports" fetchpriority="high" decoding="async">
-        <figcaption class="hero-tag">งานติดโลโก้จริง · เลือกสีได้</figcaption>
+        <img class="hero-main" src="images/hero-lifestyle.jpg" width="840" height="1050" alt="ซองกันน้ำ FEELFREE สองสีสะพายใช้งานจริงกลางแจ้ง" fetchpriority="high" decoding="async">
+        <img class="hero-inset" src="images/hero-detail.jpg" width="420" height="420" alt="ซองกันน้ำสีโอลีฟสกรีนโลโก้ คาดเข็มขัดใช้งานจริง" decoding="async">
+        <figcaption class="hero-tag">สกรีนโลโก้ลงบนตัวงาน</figcaption>
       </figure>
     </div>
   </div>
@@ -631,6 +645,10 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
         <img src="images/brand-cooler.jpg" width="700" height="700" alt="กระเป๋าเก็บความเย็นกันน้ำติดโลโก้แบรนด์" loading="lazy" decoding="async">
         <div class="txt"><p class="spec">งานกลางแจ้งและ CSR</p><h3>กระเป๋าเก็บความเย็น 25 และ 45 ลิตร</h3><p>เหมาะกับกิจกรรมกลางแจ้ง งานกีฬา และงาน CSR ที่ต้องใช้ของจริงหน้างาน ไม่ใช่แค่ของโชว์</p></div>
       </article>
+      <article class="prod">
+        <img src="images/outdoor-camp.jpg" width="900" height="720" alt="ถังพับได้ FEELFREE สองใบใช้งานจริงที่แคมป์" loading="lazy" decoding="async">
+        <div class="txt"><p class="spec">กิจกรรมกลางแจ้ง</p><h3>ถังและอ่างพับได้</h3><p>พับเก็บแบนได้ เหมาะกับงานกลางแจ้ง งานกีฬา และกิจกรรมที่ต้องขนของไปหน้างาน</p></div>
+      </article>
     </div>
   </div>
 </section>
@@ -644,6 +662,10 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
       <p class="lede">ทุกข้อด้านล่างทำได้ในโรงงานเดียวกัน ไม่ต้องส่งงานออกไปข้างนอก</p>
     </div>
     <div class="showcase">
+      <figure>
+        <img src="images/brand-drybag.jpg" width="1000" height="750" alt="ถุงกันน้ำสกรีนโลโก้องค์กรของลูกค้าจริง สองสี" loading="lazy" decoding="async">
+        <figcaption><h3>งานติดโลโก้ลูกค้าจริง</h3><p>ตัวอย่างงานที่ผลิตให้องค์กร สกรีนโลโก้ลงบนตัวถุงกันน้ำ กำหนดสีตัวสินค้าได้ตามแบรนด์</p></figcaption>
+      </figure>
       <figure>
         <img src="images/brand-tote.jpg" width="800" height="640" alt="กระเป๋าถือที่สกรีนโลโก้แบรนด์ลงบนเนื้อผ้าโดยตรง" loading="lazy" decoding="async">
         <figcaption><h3>สกรีนโลโก้ได้หลายเทคนิค</h3><p>เลือกวิธีสกรีนให้เหมาะกับวัสดุและจำนวน เพื่อให้โลโก้ติดทนไม่ลอกหลังใช้งานจริง</p></figcaption>
@@ -700,15 +722,15 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
     <div class="sec-head">
       <p class="eyebrow">ขั้นตอนทำงาน</p>
       <h2>6 ขั้นตอนทำงาน จากบรีฟแรกบนโต๊ะ ถึงวันส่งมอบ</h2>
-      <p class="lede">เริ่มจากสามอย่างเท่านั้น คือจำนวน งบต่อชิ้น และวันที่ต้องใช้</p>
+      <p class="lede">จากทั้งหมด 6 ขั้น มีแค่ 3 จุดที่ต้องใช้เวลาของคุณ คือบอกโจทย์ เลือกวัสดุ และอนุมัติตัวอย่าง ที่เหลือเป็นงานของโรงงาน</p>
     </div>
     <ol class="steps">
-      <li><p class="num">STEP 01</p><div><h3>บอกโจทย์ จำนวน งบ และวันที่ต้องใช้</h3><p>ไม่ต้องมีแบบพร้อม บอกแค่ว่าจะแจกใคร ในโอกาสไหน จำนวนเท่าไร และต้องได้ของวันไหน</p></div></li>
-      <li><p class="num">STEP 02</p><div><h3>ออกแบบและวางตำแหน่งโลโก้</h3><p>ทีมออกแบบเสนอทรงและตำแหน่งโลโก้ให้เลือก พร้อมภาพจำลองก่อนตัดสินใจ</p></div></li>
-      <li><p class="num">STEP 03</p><div><h3>เลือกวัสดุและสี</h3><p>เลือกจากผ้าหลักหลายเกรด กำหนดสีตัวกระเป๋า หูหิ้ว และซิปให้ตรง CI องค์กร</p></div></li>
-      <li><p class="num">STEP 04</p><div><h3>ทำต้นแบบให้จับของจริง</h3><p>ได้ตัวอย่างไปลองใส่ของ ลองทดสอบ และใช้ขออนุมัติจากผู้บริหารก่อนเข้าไลน์ผลิต</p></div></li>
-      <li><p class="num">STEP 05</p><div><h3>ผลิตและสกรีนโลโก้</h3><p>เข้าไลน์ผลิตมาตรฐานเดียวกับที่ใช้ทำสินค้าแบรนด์ FEELFREE ที่ส่งออกไปต่างประเทศ</p></div></li>
-      <li><p class="num">STEP 06</p><div><h3>แพ็กและส่งตามที่ตกลง</h3><p>ส่งรวมที่เดียวหรือแยกส่งหลายสาขาก็ได้ งานตัวแทนส่งตรงถึงลูกค้าปลายทางได้</p></div></li>
+      <li><p class="num">STEP 01</p><div><p class="who you">หน้าที่คุณ</p><h3>บอกโจทย์ จำนวน งบ และวันที่ต้องใช้</h3><p>ไม่ต้องมีแบบพร้อม บอกแค่ว่าจะแจกใคร ในโอกาสไหน จำนวนเท่าไร และต้องได้ของวันไหน</p></div></li>
+      <li><p class="num">STEP 02</p><div><p class="who us">เราทำให้</p><h3>ออกแบบและวางตำแหน่งโลโก้</h3><p>ทีมออกแบบเสนอทรงและตำแหน่งโลโก้ให้เลือก พร้อมภาพจำลองก่อนตัดสินใจ</p></div></li>
+      <li><p class="num">STEP 03</p><div><p class="who you">คุณเลือก</p><h3>เลือกวัสดุและสี</h3><p>เลือกจากผ้าหลักหลายเกรด กำหนดสีตัวกระเป๋า หูหิ้ว และซิปให้ตรง CI องค์กร</p></div></li>
+      <li><p class="num">STEP 04</p><div><p class="who you">คุณอนุมัติ</p><h3>ทำต้นแบบให้จับของจริง</h3><p>ได้ตัวอย่างไปลองใส่ของ ลองทดสอบ และใช้ขออนุมัติจากผู้บริหารก่อนเข้าไลน์ผลิต</p></div></li>
+      <li><p class="num">STEP 05</p><div><p class="who us">เราทำให้</p><h3>ผลิตและสกรีนโลโก้</h3><p>เข้าไลน์ผลิตมาตรฐานเดียวกับที่ใช้ทำสินค้าแบรนด์ FEELFREE ที่ส่งออกไปต่างประเทศ</p></div></li>
+      <li><p class="num">STEP 06</p><div><p class="who us">เราทำให้</p><h3>แพ็กและส่งตามที่ตกลง</h3><p>ส่งรวมที่เดียวหรือแยกส่งหลายสาขาก็ได้ งานตัวแทนส่งตรงถึงลูกค้าปลายทางได้</p></div></li>
     </ol>
   </div>
 </section>
