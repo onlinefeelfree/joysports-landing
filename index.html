@@ -838,7 +838,7 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
       <div class="contacts">
         <div class="contact" id="lineRow">
           <span class="lbl">LINE</span>
-          <span class="val" id="lineHandle">@864blkjt</span>
+          <span class="val" id="lineHandle">@joysports</span>
           <a class="btn btn-primary btn-sm js-lead js-line" data-ch="line" id="lineBtn" href="https://lin.ee/xXiQhSo" target="_blank" rel="noopener">ทักแชท</a>
         </div>
         <div class="contact">
@@ -1040,7 +1040,8 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
      ====================================================================== */
   var CONFIG = {
     pixelId:   "",                 // Pixel ID จาก ads.openai.com → Settings → Conversions
-    lineOaId:  "864blkjt",                 // LINE OA id ไม่ต้องใส่ @ เช่น "joysports" (ว่าง = ซ่อนแถว LINE)
+    lineOaId:  "864blkjt",         // ไอดีที่ใช้สร้างลิงก์ ยืนยันแล้วจาก lin.ee (ว่าง = ซ่อนแถว LINE)
+    lineShowId: "joysports",       // ไอดีที่เอาไว้โชว์บนหน้าเว็บ ถ้าเว้นว่างจะโชว์ lineOaId แทน
     leadEvent: "lead_created"      // standard event ที่ตั้งเป็นเป้า Conversions
   };
 
@@ -1116,7 +1117,7 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
     var msg = "สนใจสั่งผลิตของพรีเมียมติดโลโก้";
     if (segData) msg += " (" + segData.tag.split(" · ")[0] + ")";
     if (row) row.hidden = false;
-    if (handle) handle.textContent = "@" + CONFIG.lineOaId;
+    if (handle) handle.textContent = "@" + (CONFIG.lineShowId || CONFIG.lineOaId);
     var lineHref = isMobile
       ? "https://line.me/R/oaMessage/%40" + CONFIG.lineOaId + "/?" + encodeURIComponent(msg)
       : "https://line.me/R/ti/p/%40" + CONFIG.lineOaId;
