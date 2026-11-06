@@ -158,7 +158,7 @@ header .btn{flex:none}
   content:""; position:absolute; left:0; top:9px; width:19px; height:19px; border-radius:50%;
   background:var(--gold); box-shadow:inset 0 0 0 2px var(--navy-800);
 }
-.ticks li b{font-weight:600; color:var(--ink)}
+.ticks li b{font-weight:600; color:var(--ink); margin-right:5px}
 
 .hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:28px}
 
@@ -404,18 +404,18 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
         <h1 id="segHead"><span class="nb">ของขวัญพรีเมียม</span>ที่<span class="nb">ลูกค้า VIP</span> <em>อยากหยิบมาใช้</em></h1>
         <p class="lede" id="segLede">จากโรงงานเจ้าของแบรนด์ FEELFREE ที่ส่งออกเอง <span class="nb">60 ประเทศ</span> สั่งผลิต<span class="nb">ติดโลโก้</span>ได้สเปกเดียวกับสินค้าที่เราขายต่างประเทศ</p>
         <ul class="ticks">
-          <li><b>โรงงานตัวจริง ไม่ผ่านคนกลาง</b> — ได้ราคาโรงงานต้นทางจากบางพลี</li>
-          <li><b>ทีมออกแบบอยู่ในโรงงาน</b> — มีแค่โลโก้ก็เริ่มได้ ไม่ต้องมี Tech pack มาก่อน</li>
-          <li><b>ผลิตแบบ White-label</b> — ส่งของในนามคุณ ไม่มีชื่อเราติดไปกับของ</li>
-          <li><b>คุมสีให้ตรง CI องค์กร</b> — กำหนดได้ลึกถึงสีหูหิ้วและซิป ไม่ใช่แค่สีตัวกระเป๋า</li>
-          <li><b>ยกระดับของแจกด้วยประกัน 2 ปี</b> — มีการรับประกันจากโรงงานรองรับ</li>
+          <li><b>โรงงานตัวจริงที่บางพลี</b> ซื้อตรงไม่ผ่านคนกลาง ได้ราคาโรงงานต้นทาง</li>
+          <li><b>ทีมออกแบบอยู่ในโรงงาน</b> มีแค่ไฟล์โลโก้ก็เริ่มได้ ไม่ต้องมี Tech pack</li>
+          <li><b>ผลิตแบบ White-label</b> ส่งของในนามคุณ ไม่มีชื่อเราติดไปกับของ</li>
+          <li><b>คุมสีให้ตรง CI องค์กร</b> กำหนดได้ลึกถึงสีหูหิ้วและซิป ไม่ใช่แค่ตัวกระเป๋า</li>
+          <li><b>รับประกันสินค้า 2 ปี</b> จากโรงงานผู้ผลิตเอง ไม่ใช่แจกแล้วจบ</li>
         </ul>
         <div class="entry">
           <div class="entry-nums">
             <span><b>5,000</b> บาท <small>งบเริ่มต้น</small></span>
             <span><b>50</b> ใบ <small>สั่งขั้นต่ำ</small></span>
           </div>
-          <p>เฉพาะ<b>บางรุ่น</b> ไม่ใช่ทุกทรง — บอกทรงที่สนใจกับจำนวน เราตอบขั้นต่ำและงบจริงของรุ่นนั้นให้</p>
+          <p>เฉพาะ<b>บางรุ่น</b> ไม่ใช่ทุกทรง บอกทรงที่สนใจกับจำนวนมา เราตอบขั้นต่ำและงบจริงของรุ่นนั้นให้</p>
         </div>
         <div class="hero-cta">
           <a class="btn btn-primary js-lead" data-ch="hero_phone" href="tel:0616363261">โทรคุยกับโรงงาน 061-636-3261</a>
@@ -782,7 +782,7 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
       <div class="contacts">
         <div class="contact" id="lineRow" hidden>
           <span class="lbl">LINE</span>
-          <span class="val" id="lineHandle">—</span>
+          <span class="val" id="lineHandle"></span>
           <a class="btn btn-primary btn-sm js-lead" data-ch="line" id="lineBtn" href="#">ทักแชท</a>
         </div>
         <div class="contact">
