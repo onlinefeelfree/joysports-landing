@@ -310,6 +310,13 @@ td{color:var(--ink-2)}
 .swatch img{width:100%; aspect-ratio:1100/269; object-fit:cover}
 .swatch p{padding:14px 18px; font-size:14.6px; color:var(--muted)}
 
+/* ---------- แกลเลอรีการใช้งานจริง ---------- */
+.gallery{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px}
+@media (max-width:900px){ .gallery{grid-template-columns:repeat(2,minmax(0,1fr))} }
+.gallery figure{margin:0; overflow:hidden; border-radius:12px; background:var(--navy-800)}
+.gallery img{width:100%; aspect-ratio:1/1; object-fit:cover; transition:transform .45s ease}
+.gallery figure:hover img{transform:scale(1.05)}
+
 /* ---------- แถบนายหน้า ---------- */
 .agent-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(28px,4vw,54px); align-items:center}
 .agent-grid>*{min-width:0}
@@ -687,6 +694,27 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
     <div class="swatch">
       <img src="images/colors-swatch.jpg" width="1100" height="269" alt="ตัวอย่างคู่สีของวัสดุที่เลือกได้สำหรับงานติดโลโก้" loading="lazy" decoding="async">
       <p>คุมสีตัวกระเป๋า หูหิ้ว และซิปให้ตรง CI องค์กรได้ แจ้งรหัสสีของแบรนด์มาตั้งแต่ตอนเลือกวัสดุ · มีวัสดุเกรด Food Grade สำหรับงานที่ต้องสัมผัสอาหาร</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ แกลเลอรีการใช้งานจริง ============ -->
+<section class="sec sec-navy" id="gallery" style="background:var(--navy-900)">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">ของจริงเวลาใช้งาน</p>
+      <h2>ของพรีเมียมที่ดี ต้องดูดีตอนอยู่กับผู้รับ ไม่ใช่แค่ตอนอยู่ในกล่อง</h2>
+      <p class="lede">ภาพจากสินค้าที่โรงงานผลิตจริง ทั้งงานกลางแจ้ง งานในเมือง และของที่พกไปทำงานทุกวัน</p>
+    </div>
+    <div class="gallery">
+      <figure><img src="images/use-crossbody.jpg" width="600" height="600" alt="ซองกันน้ำสองสีสะพายครอสบอดี้บนเสื้อลายสก็อต" loading="lazy" decoding="async"></figure>
+      <figure><img src="images/use-round-olive.jpg" width="600" height="600" alt="ซองกลมสีโอลีฟสกรีนโลโก้ เกี่ยวกับสายเป้" loading="lazy" decoding="async"></figure>
+      <figure><img src="images/use-shoulder-work.jpg" width="600" height="600" alt="กระเป๋าสะพายข้างใช้งานจริงในคลังสินค้า" loading="lazy" decoding="async"></figure>
+      <figure><img src="images/use-bucket-water.jpg" width="600" height="600" alt="ถังพับได้สีโอลีฟหิ้วตักน้ำริมลำธาร" loading="lazy" decoding="async"></figure>
+      <figure><img src="images/use-pouch-cream.jpg" width="600" height="600" alt="ซองกันน้ำสีครีมคาดเข็มขัดบนกางเกงยีนส์" loading="lazy" decoding="async"></figure>
+      <figure><img src="images/use-messenger-city.jpg" width="600" height="600" alt="กระเป๋าสะพายสีดำใช้งานจริงกลางเมือง" loading="lazy" decoding="async"></figure>
+      <figure><img src="images/use-belt-pouch.jpg" width="600" height="600" alt="กระเป๋าคาดเอวสองโทนสีบนเสื้อลายสก็อต" loading="lazy" decoding="async"></figure>
+      <figure><img src="images/use-round-cream.jpg" width="600" height="600" alt="ซองกลมสีครีมสกรีนโลโก้ เกี่ยวกับสายเป้" loading="lazy" decoding="async"></figure>
     </div>
   </div>
 </section>
