@@ -441,7 +441,8 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
           <p>เรตสำหรับกระเป๋า<b>ทรงมาตรฐาน</b> หากมีทรงอื่นในใจ ส่งแบบและจำนวนมาให้เราช่วยประเมินต้นทุนได้เลย</p>
         </div>
         <div class="hero-cta">
-          <a class="btn btn-primary js-lead" data-ch="hero_phone" href="tel:0616363261">โทรคุยกับโรงงาน 061-636-3261</a>
+          <a class="btn btn-primary js-lead js-line" data-ch="line" href="https://lin.ee/xXiQhSo" target="_blank" rel="noopener">ทักแชททาง LINE</a>
+        <a class="btn btn-ghost js-lead" data-ch="hero_phone" href="tel:0616363261">โทรคุยกับโรงงาน 061-636-3261</a>
           <a class="btn btn-ghost" href="#about">ดูข้อมูลบริการทั้งหมด</a>
         </div>
       </div>
@@ -613,7 +614,8 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
           <li><span class="k">05</span><div><b>บอกงบที่ต้องยื่นมาได้เลย</b><p>บอกงบต่อชิ้นกับจำนวน เราตอบกลับว่าในกรอบนั้นทำอะไรได้บ้าง ไม่ต้องเดาราคาไปก่อน</p></div></li>
         </ul>
         <div class="hero-cta">
-          <a class="btn btn-primary js-lead" data-ch="agent_phone" href="tel:0961653665">ขอรูปและสเปกไปเสนอลูกค้า 096-165-3665</a>
+          <a class="btn btn-primary js-lead js-line" data-ch="line" href="https://lin.ee/xXiQhSo" target="_blank" rel="noopener">ขอรูปและสเปกทาง LINE</a>
+        <a class="btn btn-ghost js-lead" data-ch="agent_phone" href="tel:0961653665">ขอรูปและสเปก 096-165-3665</a>
         </div>
       </div>
       <figure class="agent-fig" style="margin:0">
@@ -837,7 +839,7 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
         <div class="contact" id="lineRow">
           <span class="lbl">LINE</span>
           <span class="val" id="lineHandle">@864blkjt</span>
-          <a class="btn btn-primary btn-sm js-lead" data-ch="line" id="lineBtn" href="https://lin.ee/xXiQhSo" target="_blank" rel="noopener">ทักแชท</a>
+          <a class="btn btn-primary btn-sm js-lead js-line" data-ch="line" id="lineBtn" href="https://lin.ee/xXiQhSo" target="_blank" rel="noopener">ทักแชท</a>
         </div>
         <div class="contact">
           <span class="lbl">โทร</span>
@@ -885,7 +887,8 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
 </footer>
 
 <div class="float">
-  <a class="btn btn-primary js-lead" data-ch="float_phone" href="tel:0616363261">โทรหาโรงงาน</a>
+  <a class="btn btn-primary js-lead js-line" data-ch="line" href="https://lin.ee/xXiQhSo" target="_blank" rel="noopener">ทักแชท LINE</a>
+    <a class="btn btn-ghost js-lead" data-ch="float_phone" href="tel:0616363261">โทร</a>
 </div>
 
 <script type="application/ld+json">
@@ -1108,18 +1111,19 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
   if (CONFIG.lineOaId) {
     var row = document.getElementById("lineRow");
     var handle = document.getElementById("lineHandle");
-    var btn = document.getElementById("lineBtn");
+    var lineBtns = document.querySelectorAll(".js-line");
     var isMobile = /android|iphone|ipad|ipod/i.test(navigator.userAgent);
     var msg = "สนใจสั่งผลิตของพรีเมียมติดโลโก้";
     if (segData) msg += " (" + segData.tag.split(" · ")[0] + ")";
     if (row) row.hidden = false;
     if (handle) handle.textContent = "@" + CONFIG.lineOaId;
-    if (btn) {
-      btn.href = isMobile
-        ? "https://line.me/R/oaMessage/%40" + CONFIG.lineOaId + "/?" + encodeURIComponent(msg)
-        : "https://line.me/R/ti/p/%40" + CONFIG.lineOaId;
-      btn.target = "_blank";
-      btn.rel = "noopener";
+    var lineHref = isMobile
+      ? "https://line.me/R/oaMessage/%40" + CONFIG.lineOaId + "/?" + encodeURIComponent(msg)
+      : "https://line.me/R/ti/p/%40" + CONFIG.lineOaId;
+    for (var li = 0; li < lineBtns.length; li++) {
+      lineBtns[li].href = lineHref;
+      lineBtns[li].target = "_blank";
+      lineBtns[li].rel = "noopener";
     }
   }
 
