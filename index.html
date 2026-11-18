@@ -306,6 +306,17 @@ td{color:var(--ink-2)}
   letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:3px;
 }
 
+/* ---------- งานติดโลโก้ที่เคยผลิต ---------- */
+.logowork{margin-top:clamp(30px,4vw,44px); padding-top:clamp(26px,3.4vw,38px); border-top:1px solid var(--line)}
+.logowork .head{max-width:640px; margin-bottom:22px}
+.logowork .head h3{font-size:clamp(20px,2.2vw,25px)}
+.logowork .head p{margin-top:9px; color:var(--muted); font-size:16px}
+.logowork .items{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(212px,1fr))}
+.logowork .items>*{min-width:0}
+.logowork figure{margin:0; background:#FFFFFF; border:1px solid var(--line); border-radius:var(--r); overflow:hidden; box-shadow:var(--shadow)}
+.logowork img{width:100%; height:auto; aspect-ratio:1/1; object-fit:cover}
+.logowork figcaption{padding:13px 16px 17px; font-size:14.4px; color:var(--muted); line-height:1.5}
+
 /* ---------- งานตกแต่งโลโก้ ---------- */
 .showcase{display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(248px,1fr))}
 .showcase>*{min-width:0}
@@ -658,37 +669,55 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
     </div>
     <div class="prods">
       <article class="prod">
-        <img src="images/product-drybag-blue.jpg?v=261118" width="700" height="700" alt="ถุงกันน้ำม้วนปากสกรีนโลโก้ลูกค้า งาน OEM ของ Joy Sports" loading="lazy" decoding="async">
-        <div class="txt"><p class="spec">แจกจำนวนมาก</p><h3>ถุงกันน้ำม้วนปาก</h3><p>ทรงที่คนเก็บไว้ใช้จริงมากที่สุด ปากม้วนกันน้ำ มีหลายขนาดให้เลือกตามงบต่อชิ้น</p><p class="models"><span>รุ่นที่ผลิต</span>DRY&nbsp;TANK&nbsp;30 · DRY&nbsp;TANK&nbsp;40 · TUBE&nbsp;CS · Tropical&nbsp;DT&nbsp;1.5</p></div>
+        <img src="images/product-drytube.jpg" width="700" height="700" alt="ถุงกันน้ำม้วนปากรุ่น DRY TUBE ของแบรนด์ FEELFREE" loading="lazy" decoding="async">
+        <div class="txt"><p class="spec">แจกจำนวนมาก</p><h3>ถุงกันน้ำม้วนปาก</h3><p>ทรงที่คนเก็บไว้ใช้จริงมากที่สุด ปากม้วนกันน้ำ มีหลายขนาดให้เลือกตามงบต่อชิ้น</p><p class="models"><span>รุ่นที่ผลิต</span>DRY&nbsp;TUBE</p></div>
       </article>
       <article class="prod">
         <img src="images/product-tote-teal.jpg?v=261118" width="700" height="700" alt="กระเป๋าถือทรง Tote รุ่น MEME ของแบรนด์ FEELFREE" loading="lazy" decoding="async">
         <div class="txt"><p class="spec">พื้นที่โลโก้มากสุด</p><h3>กระเป๋าถือและถุงทรง Tote</h3><p>หน้ากว้าง สกรีนโลโก้ได้ใหญ่ เหมาะกับงานที่อยากให้แบรนด์ถูกเห็นตอนถือเดิน</p><p class="models"><span>รุ่นที่ผลิต</span>MEME</p></div>
       </article>
       <article class="prod">
-        <img src="images/product-pouch.jpg?v=261118" width="700" height="700" alt="กระเป๋าจัดระเบียบกันน้ำสามขนาด งานสกรีนโลโก้องค์กร" loading="lazy" decoding="async">
-        <div class="txt"><p class="spec">งานสัมมนาและอบรม</p><h3>กระเป๋าจัดระเบียบ</h3><p>ใส่สายชาร์จ เอกสาร และของใช้ส่วนตัว เหมาะกับของแจกในงานประชุมและอบรม</p></div>
+        <img src="images/product-crossbody.jpg" width="700" height="700" alt="กระเป๋าสะพายข้างกันน้ำทรง Cross body ของแบรนด์ FEELFREE" loading="lazy" decoding="async">
+        <div class="txt"><p class="spec">งานสัมมนาและอบรม</p><h3>กระเป๋าจัดระเบียบ</h3><p>ทรงสะพายข้างมีช่องแบ่งด้านในและตาข่ายด้านหน้า สำหรับแจกงานสัมมนา ใส่สายชาร์จ เอกสาร และของใช้ส่วนตัว</p><p class="models"><span>รุ่นที่ผลิต</span>Cross&nbsp;body</p></div>
       </article>
       <article class="prod">
-        <img src="images/product-duffel.jpg?v=261118" width="700" height="700" alt="เป้กันน้ำม้วนปากรุ่น DRY TANK ของแบรนด์ FEELFREE" loading="lazy" decoding="async">
-        <div class="txt"><p class="spec">ของมูลค่าสูง</p><h3>กระเป๋าใบใหญ่และเป้</h3><p>สำหรับรางวัลพนักงานหรือของขวัญลูกค้ารายสำคัญ ที่ต้องการของที่ใช้ได้นานหลายปี</p><p class="models"><span>รุ่นที่ผลิต</span>GO&nbsp;PACK · Mini&nbsp;Backpack · Duffel</p></div>
+        <img src="images/product-duffel.jpg?v=261118" width="700" height="700" alt="เป้กันน้ำม้วนปากรุ่น DRY TANK 30 ของแบรนด์ FEELFREE" loading="lazy" decoding="async">
+        <div class="txt"><p class="spec">ของมูลค่าสูง</p><h3>กระเป๋าใบใหญ่และเป้</h3><p>สำหรับรางวัลพนักงานหรือของขวัญลูกค้ารายสำคัญ ที่ต้องการของที่ใช้ได้นานหลายปี</p><p class="models"><span>รุ่นที่ผลิต</span>DRY&nbsp;TANK&nbsp;30</p></div>
       </article>
       <article class="prod">
         <img src="images/product-coinbag.jpg?v=261118" width="700" height="700" alt="ซองกันน้ำชิ้นเล็กรุ่น FEELFREE X HOLEN" loading="lazy" decoding="async">
-        <div class="txt"><p class="spec">งบต่อชิ้นต่ำ</p><h3>ของชิ้นเล็กแจกหน้างาน</h3><p>ซองกันน้ำและกระเป๋าใส่เหรียญ สำหรับงานที่ต้องแจกจำนวนมากในงบจำกัด</p><p class="models"><span>รุ่นที่ผลิต</span>CAMERA&nbsp;FOAM · ซองใส่&nbsp;Notebook · ซองมือถือ</p></div>
-      </article>
-      <article class="prod">
-        <img src="images/product-buckets.jpg?v=261118" width="700" height="700" alt="ชุดกระเป๋ากันน้ำหลายขนาดรุ่น FEELFREE X HOLEN" loading="lazy" decoding="async">
-        <div class="txt"><p class="spec">ทำเป็นเซ็ต</p><h3>ชุดหลายขนาดในกล่องเดียว</h3><p>จัดเป็นเซ็ตของขวัญได้ ทำให้ของดูมีมูลค่าขึ้นโดยไม่ต้องเพิ่มงบมาก</p></div>
+        <div class="txt"><p class="spec">งบต่อชิ้นต่ำ</p><h3>ของชิ้นเล็กแจกหน้างาน</h3><p>ซองกันน้ำและกระเป๋าใส่เหรียญ สำหรับงานที่ต้องแจกจำนวนมากในงบจำกัด</p></div>
       </article>
       <article class="prod">
         <img src="images/brand-cooler.jpg?v=261118" width="700" height="700" alt="กระเป๋าเก็บความเย็นรุ่น Soft Cooler ของแบรนด์ FEELFREE" loading="lazy" decoding="async">
         <div class="txt"><p class="spec">งานกลางแจ้งและ CSR</p><h3>กระเป๋าเก็บความเย็น 1.5 ถึง 90 ลิตร</h3><p>เหมาะกับกิจกรรมกลางแจ้ง งานกีฬา และงาน CSR ที่ต้องใช้ของจริงหน้างาน ไม่ใช่แค่ของโชว์</p><p class="models"><span>รุ่นที่ผลิต</span>Soft&nbsp;Cooler</p></div>
       </article>
       <article class="prod">
-        <img src="images/product-basin.jpg" width="900" height="720" alt="ถังพับได้รุ่น Foldable Wash Basin สกรีนโลโก้ลูกค้า" loading="lazy" decoding="async">
-        <div class="txt"><p class="spec">กิจกรรมกลางแจ้ง</p><h3>ถังและอ่างพับได้</h3><p>พับเก็บแบนได้ เหมาะกับงานกลางแจ้ง งานกีฬา และกิจกรรมที่ต้องขนของไปหน้างาน</p><p class="models"><span>รุ่นที่ผลิต</span>Foldable&nbsp;Wash&nbsp;Basin</p></div>
+        <img src="images/product-bucket.jpg" width="700" height="700" alt="ถังพับได้ของแบรนด์ FEELFREE ขนาด 5 และ 10 ลิตร" loading="lazy" decoding="async">
+        <div class="txt"><p class="spec">กิจกรรมกลางแจ้ง</p><h3>ถังและอ่างพับได้</h3><p>ถังผ้าใบพับแบนได้ขนาด 5 และ 10 ลิตร มีสายหิ้ว เหมาะกับงานกีฬา กิจกรรมกลางแจ้งที่ต้องขนของไปหน้างาน</p></div>
       </article>
+    </div>
+
+    <div class="logowork">
+      <div class="head">
+        <p class="eyebrow">ตัวอย่างงานสกรีน</p>
+        <h3>งานติดโลโก้ที่เคยออกจากไลน์ผลิตนี้</h3>
+        <p>โรงงานเคยผลิตและสกรีนโลโก้ให้ทั้งหน่วยงานราชการ บริษัท และแบรนด์สินค้า</p>
+      </div>
+      <div class="items">
+        <figure>
+          <img src="images/product-drybag-blue.jpg?v=261118" width="700" height="700" alt="ถุงกันน้ำม้วนปากสองสี สกรีนโลโก้หน่วยงานส่งเสริมการท่องเที่ยว" loading="lazy" decoding="async">
+          <figcaption>ถุงกันน้ำม้วนปาก โลโก้หน่วยงานส่งเสริมการท่องเที่ยว</figcaption>
+        </figure>
+        <figure>
+          <img src="images/product-pouch.jpg?v=261118" width="700" height="700" alt="กล่องจัดระเบียบผ้าใบกันน้ำสามขนาด สกรีนโลโก้ธุรกิจอุปกรณ์รถออฟโรด" loading="lazy" decoding="async">
+          <figcaption>กล่องจัดระเบียบผ้าใบ โลโก้ธุรกิจอุปกรณ์รถออฟโรด</figcaption>
+        </figure>
+        <figure>
+          <img src="images/product-basin.jpg" width="1000" height="1000" alt="ถังพับได้ สกรีนโลโก้และชื่อบริษัทของลูกค้า" loading="lazy" decoding="async">
+          <figcaption>ถังพับได้ สกรีนโลโก้และชื่อบริษัททั้งไทยและอังกฤษ</figcaption>
+        </figure>
+      </div>
     </div>
   </div>
 </section>
@@ -704,7 +733,7 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
     <div class="showcase">
       <figure>
         <img src="images/brand-drybag.jpg" width="1000" height="750" alt="ถุงกันน้ำสกรีนโลโก้องค์กรของลูกค้าจริง สองสี" loading="lazy" decoding="async">
-        <figcaption><h3>งานติดโลโก้ลูกค้าจริง</h3><p>ตัวอย่างงานที่ผลิตให้องค์กร สกรีนโลโก้ลงบนตัวถุงกันน้ำ กำหนดสีตัวสินค้าได้ตามแบรนด์</p></figcaption>
+        <figcaption><h3>เลือกสีตัวสินค้าเองได้</h3><p>ตัวอย่างงานที่ผลิตให้องค์กร สกรีนโลโก้ลงบนตัวถุงกันน้ำ กำหนดสีตัวสินค้าได้ตามแบรนด์</p></figcaption>
       </figure>
       <figure>
         <img src="images/brand-tote.jpg" width="800" height="640" alt="กระเป๋าถือที่สกรีนโลโก้แบรนด์ลงบนเนื้อผ้าโดยตรง" loading="lazy" decoding="async">
@@ -1067,7 +1096,7 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
             "@type": "Offer",
             "itemOffered": {
               "@type": "Product",
-              "name": "กระเป๋าเก็บความเย็น 25 และ 45 ลิตร"
+              "name": "กระเป๋าเก็บความเย็นติดโลโก้"
             }
           }
         ]
