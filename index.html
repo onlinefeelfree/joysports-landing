@@ -164,9 +164,10 @@ header .btn{flex:none}
 
 .hero-fig{position:relative}
 .hero-fig .hero-main{width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:var(--r); box-shadow:var(--shadow-lg)}
-/* ภาพดีเทลซ้อนมุม ให้ hero ดูเป็นงานจัดหน้า ไม่ใช่รูปสินค้าใบเดียว */
+/* ภาพดีเทลซ้อนมุม ให้ hero ดูเป็นงานจัดหน้า ไม่ใช่รูปสินค้าใบเดียว
+   วางมุมขวาล่าง เพราะกระเป๋าในภาพหลักอยู่ค่อนไปทางซ้าย จะได้ไม่ทับกัน */
 .hero-fig .hero-inset{
-  position:absolute; left:14px; bottom:14px; width:38%; max-width:168px;
+  position:absolute; right:14px; bottom:14px; width:38%; max-width:168px;
   aspect-ratio:1/1; object-fit:cover; border:5px solid #FFFFFF; border-radius:12px;
   box-shadow:var(--shadow-lg);
 }
@@ -174,7 +175,7 @@ header .btn{flex:none}
   .hero-grid{align-items:stretch}
   .hero-fig{display:flex; flex-direction:column}
   .hero-fig .hero-main{flex:1; aspect-ratio:auto; min-height:460px; object-position:50% 34%}
-  .hero-fig .hero-inset{left:-20px; bottom:-20px; width:42%; max-width:196px}
+  .hero-fig .hero-inset{right:14px; bottom:-20px; width:42%; max-width:196px}
 }
 .hero-tag{
   position:absolute; right:16px; top:16px; background:rgba(13,20,33,.86); color:#FFFFFF;
