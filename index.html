@@ -3,6 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- OpenAI Ads Pixel (ChatGPT Ads) — base code -->
+<script>
+  (function (w, d, s, u) {
+    if (w.oaiq) return;
+    var q = function () { q.q.push(arguments); };
+    q.q = [];
+    w.oaiq = q;
+    var js = d.createElement(s);
+    js.async = true;
+    js.src = u;
+    var f = d.getElementsByTagName(s)[0];
+    f.parentNode.insertBefore(js, f);
+  })(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+  oaiq("init", { pixelId: "QR2ooU8NSj9UCCbeKZZpwT" });
+  oaiq("measure", "page_viewed", {
+    type: "contents",
+    contents: [{ id: "landing-page", name: "Landing Page", content_type: "page" }]
+  });
+</script>
 <title>รับผลิตของพรีเมียมติดโลโก้ กระเป๋ากันน้ำ OEM/ODM | Joy Sports โรงงานผู้ผลิตโดยตรง</title>
 <meta name="description" content="บริษัท จอย สปอร์ต จำกัด เจ้าของแบรนด์ FEELFREE โรงงานผลิตกระเป๋ากันน้ำและของพรีเมียมติดโลโก้โดยตรงที่บางพลี สมุทรปราการ รับงาน OEM ODM และรับผลิตในนามตัวแทนและนายหน้า ส่งออกแบรนด์ตัวเอง 53 ประเทศทั่วโลก สินค้ารับประกัน 2 ปี">
 <link rel="canonical" href="https://www.oem.waterproofbags.joysports.co.th/">
@@ -1324,10 +1343,11 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
      ตั้งค่าก่อนขึ้นจริง — แก้แค่บล็อกนี้
      ====================================================================== */
   var CONFIG = {
-    pixelId:   "",                 // Pixel ID จาก ads.openai.com → Settings → Conversions
+    // Pixel ID ตั้งไว้ในโค้ดฐาน OpenAI Ads Pixel ใน <head> (QR2ooU8NSj9UCCbeKZZpwT)
     lineOaId:  "864blkjt",         // ไอดีที่ใช้สร้างลิงก์ ยืนยันแล้วจาก lin.ee (ว่าง = ซ่อนแถว LINE)
     lineShowId: "joysports",       // ไอดีที่เอาไว้โชว์บนหน้าเว็บ ถ้าเว้นว่างจะโชว์ lineOaId แทน
-    leadEvent: "lead_created"      // standard event ที่ตั้งเป็นเป้า Conversions
+    leadEvent: "lead_created",     // standard event ที่ตั้งเป็นเป้า Conversions (กดไป LINE เท่านั้น)
+    contactEvent: "contact_click"  // custom event: กดโทร / อีเมล / คัดลอกเบอร์ (ไม่นับเป็น lead)
   };
 
   /* --- message match จาก ?seg= (ตั้งที่ UTM ระดับแคมเปญ) --------------- */
@@ -1371,27 +1391,26 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
     if (l) l.innerHTML = segData.lede;
   }
 
-  /* --- พิกเซล OpenAI Ads: ฝังในโค้ดโดยตรง ไม่ผ่าน GTM ----------------- */
-  if (CONFIG.pixelId) {
-    window.oaiq = window.oaiq || function () { (window.oaiq.q = window.oaiq.q || []).push(arguments); };
-    var s = document.createElement("script");
-    s.async = true;
-    s.src = "https://s.openai.com/oaiq.js";
-    document.head.appendChild(s);
-    window.oaiq("init", CONFIG.pixelId);
-    window.oaiq("measure", "page_viewed");
-  }
-
-  /* --- event_id ผูกกับการเปิดหน้าหนึ่งครั้ง + ช่องทาง ----------------- */
+  /* --- พิกเซล OpenAI Ads: โค้ดฐานอยู่ใน <head> ไม่ผ่าน GTM ------------ */
+  /* --- event_id ผูกกับการเปิดหน้าหนึ่งครั้ง + ช่องทาง กดซ้ำไม่นับเพิ่ม -- */
   var pv = Math.random().toString(36).slice(2, 10) + Date.now().toString(36);
   var fired = {};
-  function fireLead(channel) {
-    if (!CONFIG.pixelId || fired[channel]) return;
-    fired[channel] = true;
-    try {
-      window.oaiq("measure", CONFIG.leadEvent, { type: "customer_action" }, { event_id: "lead_" + pv + "_" + channel });
-    } catch (e) {}
+  function measureOnce(eventId, name, payload, extra) {
+    if (fired[eventId]) return;
+    if (!window.oaiq) return;
+    fired[eventId] = true;
+    extra.event_id = eventId;
+    try { window.oaiq("measure", name, payload, extra); } catch (e) {}
   }
+  // กดไป LINE → standard event lead_created
+  function fireLead() {
+    measureOnce("lead_" + pv + "_line", CONFIG.leadEvent, { type: "customer_action" }, {});
+  }
+  // กดโทร / อีเมล / คัดลอกเบอร์ → custom event contact_click แยกตามช่องทาง
+  function fireContact(channel) {
+    measureOnce("contact_" + pv + "_" + channel, "custom", { type: "custom" }, { custom_event_name: CONFIG.contactEvent });
+  }
+  function isLineHref(h) { return /(^|\/\/|\.)(line\.me|lin\.ee)(\/|$)/i.test(h || ""); }
 
   /* --- LINE: prefill ใช้ได้บนมือถือ เดสก์ท็อปตกไปหน้าโปรไฟล์ OA ------- */
   if (CONFIG.lineOaId) {
@@ -1413,10 +1432,15 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
     }
   }
 
-  /* --- ยิง lead เฉพาะการกดช่องทางติดต่อจริง --------------------------- */
+  /* --- ยิง event เฉพาะการกดช่องทางติดต่อจริง ------------------------- */
   document.addEventListener("click", function (e) {
-    var el = e.target.closest(".js-lead");
-    if (el) { fireLead(el.getAttribute("data-ch") || "unknown"); return; }
+    var a = e.target.closest("a[href]");
+    if (a) {
+      var href = a.getAttribute("href") || "";
+      if (isLineHref(href)) { fireLead(); return; }
+      if (/^tel:/i.test(href)) { fireContact(a.getAttribute("data-ch") || "phone"); return; }
+      if (/^mailto:/i.test(href)) { fireContact(a.getAttribute("data-ch") || "email"); return; }
+    }
 
     var cp = e.target.closest(".js-copy");
     if (cp) {
@@ -1437,7 +1461,7 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
         try { document.execCommand("copy"); done(); } catch (err) {}
         document.body.removeChild(ta);
       }
-      fireLead("phone_copy");
+      fireContact("copy_" + num);
     }
   });
 })();
