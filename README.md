@@ -27,6 +27,7 @@ HANDOVER.md    คู่มือส่งมอบสำหรับฝ่า�
 โค้ดฐานของพิกเซลอยู่ใน `<head>` ของ `index.html` (Pixel ID `QR2ooU8NSj9UCCbeKZZpwT`, แหล่งข้อมูล "JoySports - Landing Page Pixel")
 ตรวจบนหน้าจริงได้ด้วยการเปิด console แล้วพิมพ์ `window.oaiq` ถ้าได้ `undefined` แปลว่ายังไม่ทำงาน
 ทดสอบ event ได้ที่ ads.openai.com → Settings → Conversions → แท็บ Event Stream
+ติดตั้งและ deploy เมื่อ 19 พ.ย. 2026
 
 ---
 
