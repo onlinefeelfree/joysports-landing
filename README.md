@@ -22,20 +22,11 @@ HANDOVER.md    คู่มือส่งมอบสำหรับฝ่า�
 
 ---
 
-## ⚠️ ยังต้องเติม pixelId ก่อนเปิดแอด
+## OpenAI Ads Pixel (ติดตั้งแล้ว)
 
-เปิด `index.html` เลื่อนไปท้ายไฟล์ หาบล็อก `CONFIG`
-
-```js
-var CONFIG = {
-  pixelId:   "",              // ← ยังว่าง รอ Pixel ID จาก ads.openai.com → Settings → Conversions
-  lineOaId:  "864blkjt",      // ← ใส่แล้ว
-  leadEvent: "lead_created"
-};
-```
-
-ถ้า `pixelId` ว่าง หน้าเว็บจะ **ไม่ยิง conversion เลย** แอดจะวัดผลไม่ได้
+โค้ดฐานของพิกเซลอยู่ใน `<head>` ของ `index.html` (Pixel ID `QR2ooU8NSj9UCCbeKZZpwT`, แหล่งข้อมูล "JoySports - Landing Page Pixel")
 ตรวจบนหน้าจริงได้ด้วยการเปิด console แล้วพิมพ์ `window.oaiq` ถ้าได้ `undefined` แปลว่ายังไม่ทำงาน
+ทดสอบ event ได้ที่ ads.openai.com → Settings → Conversions → แท็บ Event Stream
 
 ---
 
@@ -79,17 +70,18 @@ var CONFIG = {
 
 ## Conversion tracking
 
-พิกเซล OpenAI ฝังในโค้ดโดยตรง ไม่ผ่าน GTM
+พิกเซล OpenAI ฝังในโค้ดโดยตรง ไม่ผ่าน GTM — `lead_created` ใช้กับ LINE เท่านั้น (เป้า Conversions) โทร/คัดลอกเบอร์แยกเป็น `contact_click`
 
 | พฤติกรรมของคนเข้าเว็บ | Event |
 |---|---|
 | เปิดหน้า | `page_viewed` |
-| กดปุ่มทัก LINE | `lead_created` (`lead_<pageview>_line`) |
-| กดเบอร์โทรในหน้าติดต่อ | `lead_created` (`…_phone` / `…_phone2`) |
-| กดเบอร์โทรใน hero | `lead_created` (`…_hero_phone`) |
-| กดเบอร์โทรในแถบนายหน้า | `lead_created` (`…_agent_phone`) |
-| กดปุ่มลอยมุมจอ | `lead_created` (`…_float_phone`) |
-| กดปุ่มคัดลอกเบอร์ | `lead_created` (`…_phone_copy`) |
+| กดปุ่มทัก LINE (ทุกลิงก์ line.me / lin.ee) | `lead_created` (`lead_<pageview>_line`) |
+| กดเบอร์โทรในหน้าติดต่อ | `custom` → `contact_click` (`contact_<pageview>_phone` / `…_phone2`) |
+| กดเบอร์โทรใน hero | `custom` → `contact_click` (`…_hero_phone`) |
+| กดเบอร์โทรในแถบนายหน้า | `custom` → `contact_click` (`…_agent_phone`) |
+| กดปุ่มโทรลอยมุมจอ | `custom` → `contact_click` (`…_float_phone`) |
+| กดปุ่มคัดลอกเบอร์ | `custom` → `contact_click` (`…_copy_<เบอร์>`) |
+| กดลิงก์อีเมล (ถ้าเพิ่มในอนาคต) | `custom` → `contact_click` (`…_email`) |
 | กดปุ่ม "ขอใบเสนอราคา" บนหัวเว็บ | ไม่ยิง — แค่เลื่อนหน้า ยังไม่ใช่ลีด |
 
 `event_id` ผูกกับการเปิดหน้าหนึ่งครั้ง + ช่องทาง → กดซ้ำไม่นับเพิ่ม
