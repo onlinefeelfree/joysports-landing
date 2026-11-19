@@ -110,7 +110,7 @@ header{
   position:sticky; top:0; z-index:60; background:rgba(255,255,255,.93);
   backdrop-filter:saturate(180%) blur(12px); border-bottom:1px solid var(--line);
 }
-header .wrap{display:flex; align-items:center; gap:18px; min-height:68px}
+header .wrap{display:flex; align-items:center; gap:15px; min-height:68px}
 .brand{display:flex; flex-direction:column; line-height:1.1; text-decoration:none; flex:none}
 .brand b{font-family:var(--display); font-weight:700; font-size:19px; letter-spacing:.04em}
 .brand span{font-size:10.5px; letter-spacing:.17em; text-transform:uppercase; color:var(--muted); font-weight:500}
@@ -142,6 +142,9 @@ nav a:hover{background:var(--bg-2); color:var(--ink)}
 .sec-navy .btn-ghost:hover{background:rgba(255,255,255,.1); border-color:#FFFFFF}
 .btn-sm{padding:9px 16px; font-size:14px; min-height:40px}
 header .btn{flex:none}
+/* ปุ่มออกไปเว็บหลักของบริษัท เป็นปุ่มรอง ซ่อนเมื่อแถบเมนูเริ่มแน่น
+   จอแคบยังเข้าเว็บหลักได้จากโลโก้ ส่วนติดต่อ และส่วนท้ายเว็บ */
+@media (max-width:1180px){ header .nav-site{display:none} }
 @media (max-width:420px){ header .btn span{display:none} }
 
 /* ---------- Hero ---------- */
@@ -433,6 +436,7 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
       <a href="#process" class="hide-md">ขั้นตอน</a>
       <a href="#faq" class="hide-md">คำถามที่พบบ่อย</a>
     </nav>
+    <a class="btn btn-ghost btn-sm nav-site" href="https://joysports.co.th/" target="_blank" rel="noopener">เว็บไซต์</a>
     <a class="btn btn-primary btn-sm" href="#contact">ปรึกษาสเปกและราคา<span></span></a>
   </div>
 </header>
