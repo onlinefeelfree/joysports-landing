@@ -528,7 +528,7 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
       <a href="#faq" class="hide-md">คำถามที่พบบ่อย</a>
     </nav>
     <a class="btn btn-ghost btn-sm nav-site" href="https://joysports.co.th/" target="_blank" rel="noopener">เว็บไซต์</a>
-    <a class="btn btn-primary btn-sm" href="#contact">ปรึกษาสเปก<span>และราคา</span></a>
+    <a class="btn btn-primary btn-sm js-quote" data-ch="header_quote" href="#contact">ปรึกษาสเปก<span>และราคา</span></a>
   </div>
 </header>
 
@@ -1347,7 +1347,8 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
     lineOaId:  "864blkjt",         // ไอดีที่ใช้สร้างลิงก์ ยืนยันแล้วจาก lin.ee (ว่าง = ซ่อนแถว LINE)
     lineShowId: "joysports",       // ไอดีที่เอาไว้โชว์บนหน้าเว็บ ถ้าเว้นว่างจะโชว์ lineOaId แทน
     leadEvent: "lead_created",     // standard event ที่ตั้งเป็นเป้า Conversions (กดไป LINE เท่านั้น)
-    contactEvent: "contact_click"  // custom event: กดโทร / อีเมล / คัดลอกเบอร์ (ไม่นับเป็น lead)
+    contactEvent: "contact_click", // custom event: กดโทร / อีเมล / คัดลอกเบอร์ (ไม่นับเป็น lead)
+    quoteEvent: "quote_click"      // custom event: กดปุ่ม "ปรึกษาสเปกและราคา" (ขอใบเสนอราคา) บนหัวเว็บ
   };
 
   /* --- message match จาก ?seg= (ตั้งที่ UTM ระดับแคมเปญ) --------------- */
@@ -1410,6 +1411,10 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
   function fireContact(channel) {
     measureOnce("contact_" + pv + "_" + channel, "custom", { type: "custom" }, { custom_event_name: CONFIG.contactEvent });
   }
+  // กดปุ่มขอใบเสนอราคา (เลื่อนไปส่วนติดต่อ) → custom event quote_click ไว้ดูข้อมูล ไม่นับเป็น lead
+  function fireQuote(channel) {
+    measureOnce("quote_" + pv + "_" + channel, "custom", { type: "custom" }, { custom_event_name: CONFIG.quoteEvent });
+  }
   function isLineHref(h) { return /(^|\/\/|\.)(line\.me|lin\.ee)(\/|$)/i.test(h || ""); }
 
   /* --- LINE: prefill ใช้ได้บนมือถือ เดสก์ท็อปตกไปหน้าโปรไฟล์ OA ------- */
@@ -1437,6 +1442,7 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
     var a = e.target.closest("a[href]");
     if (a) {
       var href = a.getAttribute("href") || "";
+      if (a.classList.contains("js-quote")) { fireQuote(a.getAttribute("data-ch") || "quote"); return; }
       if (isLineHref(href)) { fireLead(); return; }
       if (/^tel:/i.test(href)) { fireContact(a.getAttribute("data-ch") || "phone"); return; }
       if (/^mailto:/i.test(href)) { fireContact(a.getAttribute("data-ch") || "email"); return; }
