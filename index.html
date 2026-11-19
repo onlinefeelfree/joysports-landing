@@ -398,6 +398,11 @@ a.val:hover{color:var(--gold)}
   padding-bottom:env(safe-area-inset-bottom,0px);
 }
 .float .btn{box-shadow:0 10px 30px rgba(13,20,33,.3)}
+/* ปุ่มลอยอยู่เหนือทุกส่วนของหน้า พื้นหลังข้างหลังเปลี่ยนสีไปเรื่อย
+   จึงต้องมีพื้นของตัวเอง ของเดิมพื้นโปร่งกับตัวอักษรสีเข้ม
+   พอเลื่อนผ่านส่วนพื้นกรมท่าแล้วตัวอักษรสีเดียวกับพื้นพอดี อ่านไม่ออก */
+.float .btn-ghost{background:#FFFFFF; color:var(--navy-900); border-color:#FFFFFF}
+.float .btn-ghost:hover{background:var(--bg-2); border-color:var(--bg-2)}
 @media (max-width:520px){ .float{right:12px; bottom:12px} }
 
 /* ---------- ท้ายเว็บ ---------- */
