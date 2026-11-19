@@ -45,4 +45,4 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
-Sitemap: https://joysports-landing-eta.vercel.app/sitemap.xml
+Sitemap: https://www.oem.waterproofbags.joysports.co.th/sitemap.xml

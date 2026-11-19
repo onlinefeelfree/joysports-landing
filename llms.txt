@@ -64,6 +64,6 @@
 
 ## หน้าเว็บ
 
-- [หน้าหลัก](https://joysports-landing-eta.vercel.app/): ข้อมูลบริการ ตารางสรุป สินค้าที่ผลิตได้ ขั้นตอนทำงาน และคำถามที่พบบ่อย
+- [หน้าหลัก](https://www.oem.waterproofbags.joysports.co.th/): ข้อมูลบริการ ตารางสรุป สินค้าที่ผลิตได้ ขั้นตอนทำงาน และคำถามที่พบบ่อย
 - [Facebook: Joysportsshop](https://www.facebook.com/Joysportsshop/)
 - [feelfree.co.th](https://feelfree.co.th/): เว็บไซต์แบรนด์ FEELFREE ของโรงงาน
