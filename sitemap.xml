@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://joysports-landing-eta.vercel.app/</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -11,8 +11,8 @@
       <image:title>ถุงกันน้ำม้วนปากสกรีนโลโก้องค์กร ผลิตโดย Joy Sports</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://joysports-landing-eta.vercel.app/images/hero-range.jpg</image:loc>
-      <image:title>กลุ่มสินค้ากันน้ำติดโลโก้ที่ Joy Sports ผลิตได้</image:title>
+      <image:loc>https://joysports-landing-eta.vercel.app/images/hero-drytank30.jpg</image:loc>
+      <image:title>เป้กันน้ำม้วนปาก DRY TANK 30 ที่ Joy Sports ผลิต</image:title>
     </image:image>
   </url>
 </urlset>
