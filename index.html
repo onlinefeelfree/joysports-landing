@@ -120,8 +120,12 @@ nav a{
   color:var(--ink-2); padding:8px 12px; border-radius:var(--r-sm); white-space:nowrap;
 }
 nav a:hover{background:var(--bg-2); color:var(--ink)}
-@media (max-width:1040px){ nav .hide-md{display:none} }
-@media (max-width:760px){ nav{display:none} }
+/* เมนูชุดเต็ม 6 รายการ ต้องการอย่างน้อย 1045px วัดแล้วที่ 1041px ปุ่มหลักเริ่มล้น
+   ตั้งไว้ 1100px ให้เหลือที่เผื่อฟอนต์เรนเดอร์ต่างเครื่อง */
+@media (max-width:1100px){ nav .hide-md{display:none} }
+/* เมนูโผล่ได้เฉพาะตอนที่กว้างพอจริง วัดแล้วต้องมีอย่างน้อย 804px
+   ของเดิมปล่อยให้เมนูโผล่ตั้งแต่ 761px ปุ่มหลักจึงล้นออกนอกจอบนแท็บเล็ตแนวตั้ง */
+@media (max-width:860px){ nav{display:none} }
 
 /* ---------- ไอคอน ----------
    ขนาดคงที่สามค่า ไม่ตั้งค่าสุ่ม ความหนาเส้น 2 เท่ากันทุกตัว
@@ -156,7 +160,21 @@ header .btn{flex:none}
 /* ปุ่มออกไปเว็บหลักของบริษัท เป็นปุ่มรอง ซ่อนเมื่อแถบเมนูเริ่มแน่น
    จอแคบยังเข้าเว็บหลักได้จากโลโก้ ส่วนติดต่อ และส่วนท้ายเว็บ */
 @media (max-width:1180px){ header .nav-site{display:none} }
-@media (max-width:420px){ header .btn span{display:none} }
+/* จอแคบ ปุ่มหลักเหลือข้อความสั้น และลดช่องไฟบรรทัดรองในโลโก้
+   ของเดิมสั่งซ่อน span ที่ไม่มีข้อความอยู่ข้างใน ปุ่มจึงล้นออกนอกจอแล้วถูกตัดครึ่งคำ */
+@media (max-width:560px){
+  header .wrap{gap:10px}
+  .brand span{letter-spacing:.06em}
+  header .btn-primary span{display:none}
+}
+
+/* จอเล็กมาก เช่น 320px ยังไม่พอ จึงเก็บบรรทัดรองของโลโก้
+   ย่อชื่อบริษัทและบีบปุ่มเพิ่ม ให้ทั้งแถบอยู่ในจอโดยไม่ตัดคำ */
+@media (max-width:400px){
+  .brand b{font-size:15.5px; letter-spacing:.02em}
+  .brand span{display:none}
+  header .btn-sm{padding-inline:12px; font-size:13.5px}
+}
 
 /* ---------- Hero ---------- */
 .hero{background:linear-gradient(180deg,var(--bg-2) 0%,var(--bg) 100%); padding-block:clamp(40px,5.5vw,76px)}
@@ -491,7 +509,7 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
       <a href="#faq" class="hide-md">คำถามที่พบบ่อย</a>
     </nav>
     <a class="btn btn-ghost btn-sm nav-site" href="https://joysports.co.th/" target="_blank" rel="noopener">เว็บไซต์</a>
-    <a class="btn btn-primary btn-sm" href="#contact">ปรึกษาสเปกและราคา<span></span></a>
+    <a class="btn btn-primary btn-sm" href="#contact">ปรึกษาสเปก<span>และราคา</span></a>
   </div>
 </header>
 
@@ -929,12 +947,12 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
         <div class="contact">
           <span class="lbl"><svg class="ic ic-sm" aria-hidden="true"><use href="#ic-phone"></use></svg> โทร</span>
           <a class="val js-lead" data-ch="phone" href="tel:0616363261">061-636-3261</a>
-          <button class="btn btn-ghost btn-sm js-copy" type="button" data-copy="0616363261"><svg class="ic" aria-hidden="true"><use href="#ic-copy"></use></svg> คัดลอก</button>
+          <button class="btn btn-ghost btn-sm js-copy" type="button" data-copy="0616363261"><svg class="ic" aria-hidden="true"><use href="#ic-copy"></use></svg> <span class="ctxt">คัดลอก</span></button>
         </div>
         <div class="contact">
           <span class="lbl"><svg class="ic ic-sm" aria-hidden="true"><use href="#ic-phone"></use></svg> โทร</span>
           <a class="val js-lead" data-ch="phone2" href="tel:0961653665">096-165-3665</a>
-          <button class="btn btn-ghost btn-sm js-copy" type="button" data-copy="0961653665"><svg class="ic" aria-hidden="true"><use href="#ic-copy"></use></svg> คัดลอก</button>
+          <button class="btn btn-ghost btn-sm js-copy" type="button" data-copy="0961653665"><svg class="ic" aria-hidden="true"><use href="#ic-copy"></use></svg> <span class="ctxt">คัดลอก</span></button>
         </div>
         <div class="contact">
           <span class="lbl"><svg class="ic ic-sm" aria-hidden="true"><use href="#ic-facebook"></use></svg> Facebook</span>
@@ -1035,7 +1053,7 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
         "ของพรีเมียมติดโลโก้องค์กร",
         "ODM กระเป๋าผ้ากันน้ำ",
         "สกรีนโลโก้บนกระเป๋า",
-        "วัสดุเกรด Food Grade",
+        "ผ้าเกรด Non Toxic",
         "รับผลิตในนามตัวแทนและนายหน้า"
       ],
       "sameAs": [
@@ -1403,10 +1421,13 @@ footer .legal{grid-column:1/-1; border-top:1px solid rgba(255,255,255,.12); padd
     var cp = e.target.closest(".js-copy");
     if (cp) {
       var num = cp.getAttribute("data-copy") || "";
+      // สลับเฉพาะข้อความในปุ่ม ไม่แตะไอคอน ของเดิมใช้ textContent
+      // ซึ่งไม่เก็บลูก svg ไอคอนจึงหายถาวรหลังกดครั้งแรก
+      var lab = cp.querySelector(".ctxt") || cp;
       var done = function () {
-        var old = cp.textContent;
-        cp.textContent = "คัดลอกแล้ว";
-        setTimeout(function () { cp.textContent = old; }, 1800);
+        var old = lab.textContent;
+        lab.textContent = "คัดลอกแล้ว";
+        setTimeout(function () { lab.textContent = old; }, 1800);
       };
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(num).then(done).catch(function(){});
