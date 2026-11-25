@@ -45,4 +45,4 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
-Sitemap: https://www.oem.waterproofbags.joysports.co.th/sitemap.xml
+Sitemap: https://oem.waterproofbags.joysports.co.th/sitemap.xml
